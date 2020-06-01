@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="../taobao/css/first.css">
+    <!-- <link rel="stylesheet" href="../taobao/css/index.css"> -->
+    <link rel="stylesheet" href="../taobao/css/font_8qs0gpdhgeo/iconfont.css">
+    <script src="../taobao/js/sha1.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
+    <style>
+    header .Login{width: 110px;}
+header .main1{height:88px;
+    display: flex;justify-content: space-between; align-items: center
+}
+header .main1 .advice{
+    float: right;font-size: 12px;
+}
+header .main1 .advice span{font-size: 20px;color: orangered}
+header .main1 .advice:hover{
+    color: orangered;
+}
+.backImg{    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: url('https://img.alicdn.com/tfs/TB1KURxGFP7gK0jSZFjXXc5aXXa-2500-600.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 100%;
+    height: 600px;
+}
+.main{
+    width: 100%;
+    position: relative;
+}
+
+.conterer{height: 600px;position: relative}
+
+.loginDialog{width: 350px;height: 350px;background: rgba(255, 255, 255, 0.8);position: absolute;z-index: 100;
+top: 200px;right: 0px;}
+.loginDialog .Switchicon{position: absolute;right: 3px;top: 0;font-size:50px; display: inline-block;color: orange;cursor: pointer;}
+
+.maindenglu{width: 300px;height:290px;position: absolute;left: 0;right: 0;bottom: 0;top: 0; 
+    margin: auto;}
+    .PasswordAccount li{
+        width: 100%;height: 45px;
+        border-radius: 3px;
+    }
+
+.PasswordAccount li:nth-child(1) span{ height: 18px;
+    line-height: 5px;cursor: pointer;
+    font-size: 16px;
+    color: #3c3c3c;
+    margin: 9px 10px 0 0;
+    font-weight: 700;}
+    .spersion{width: 100%;background: #fff}
+    .PasswordAccount .inputText{
+        display: flex;justify-content: space-between;align-items: center;
+    }
+    .PasswordAccount .inputText{
+        background: #fff;margin-bottom: 20px;
+    }
+    .PasswordAccount .inputText span{
+        font-size: 45px;color: #ccc;
+    }
+    .PasswordAccount .inputText input{
+        height: 30px;border: none;width:100%;outline:none;
+    }
+    .PasswordAccount .sumbit{
+        border-radius: 4px;margin-bottom: 20px;
+       height: 45px;width: 100%;background: #f40;cursor: pointer;line-height: 45px;text-align: center;color: #fff;
+    }
+    .PasswordAccount li:nth-child(7){
+      line-height: 45px;font-size: 12px;
+    }
+    .PasswordAccount a{
+     margin-right: 6px;
+    }
+    .PasswordAccount .otherA{
+        font-size: 12px;line-height: 45px;
+    }
+    .PasswordAccount .otherA a{float: right;}
+.otherB a{font-size: 12px;margin-left: 6px;position: absolute;bottom: 0;right: 0;}
+.otherB a:nth-child(2){right: 50px;}
+
+.native-phone-code-select{
+    color: rgba(0,0,0,.0001);
+    background: url(https://gw.alicdn.com/tfs/TB1.8ugw.T1gK0jSZFrXXcNCXXa-200-200.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: 48px 8px;
+    width: 65px;
+    border: none;
+    outline: 0;
+    padding-left: 3px;
+    height: 40px;font: 100% Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5B8B\4F53,sans-serif;
+    line-height: 40px;
+    cursor: pointer;    overflow: visible !important;
+    border-bottom: 0;
+    padding-right: 0px;    box-sizing: border-box;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: black;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    width: 40px;
+}
+.scanTheCodeText{
+    height: 18px;
+    line-height: 5px;cursor: pointer;
+    font-size: 16px;
+    color: #3c3c3c;
+    margin: 9px 10px 0 0;
+    font-weight: 700;
+}
+
+.textSelect{position: relative;}
+#warning{position: absolute;color: red;font-size: 13px;}
+.ereimaceshi{
+    position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: auto;width: 150px;height: 150px;
+   box-shadow: 0 0 8px #c6c4ce;padding: 5px;box-sizing: border-box;
+}
+.ereimaceshi img{width: 140px;height: 140px;}
+.scanTheCodeA{width: 200px;position: absolute;left: 0;right: 0;margin: 205px auto;display: flex;font-size: 13px;justify-content: space-between;align-items: center}
+.scanTheCodeA span{float: left;font-size: 30px;display: inline-block;color: orange;margin-right: 6px;}
+/* .scanTheCodeA p{float: right;} */
+    </style>
+ <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="./js/Cookie.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="main1"><a href="http://10.31.162.16/taobao/"><img src="http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" class="Login" alt=""></a>
+    <a href="https://survey.taobao.com" class="advice"><span class="iconfont">&#xe64b;</span>"登录页面"改进建议</a>
+    </div>
+</header>
+
+        
+<div class="main">
+<div class="backImg"></div>
+<div class="main1 conterer" >
+<div class="loginDialog">
+    <p class="iconfont Switchicon">&#xe642;</p>
+    <div class="maindenglu PasswordAccount">
+       <li class="textSelect"><span style="box-sizing: border-box;border-bottom: 2px solid #000;">密码登录</span><span>短信登录</span> <p id="warning"></p> </li> 
+       <li class="inputText"><span class="iconfont">&#xe603;</span><input class="data-user" type="text" placeholder="会员/邮箱/手机号"></li> 
+       <li class="inputText"><span class="iconfont">&#xe6cc;</span><input class="data-password" type="password" placeholder="请输入登录密码"></li> 
+       <li class="inputText" style="display: none"><span class="iconfont">&#xe613;</span>  
+
+        <select name="nativePhoneCodeSelector" class="native-phone-code-select" data-spm-anchor-id="a2107.1.0.i0.368f11d9u0E6Of">
+            <option value="中国大陆">+86 中国大陆</option>
+            <option value="中国香港">+852 中国香港</option>
+            <option value="{&quot;areaName&quot;:&quot;中国澳门&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(853){1}6\\d{7}$&quot;,&quot;countryCode&quot;:&quot;MO&quot;,&quot;phoneCode&quot;:&quot;853&quot;}">+853    中国澳门</option>
+            <option value="{&quot;areaName&quot;:&quot;中国台湾地区&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(886){1}0{0,1}[6,7,9](?:\\d{7}|\\d{8}|\\d{10})$&quot;,&quot;countryCode&quot;:&quot;TW&quot;,&quot;phoneCode&quot;:&quot;886&quot;}">+886    中国台湾地区</option>
+            <option value="{&quot;areaName&quot;:&quot;韩国&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(82){1}0{0,1}[7,1](?:\\d{8}|\\d{9})$&quot;,&quot;countryCode&quot;:&quot;KR&quot;,&quot;phoneCode&quot;:&quot;82&quot;}">+82     韩国</option>
+            <option value="{&quot;areaName&quot;:&quot;日本&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(81){1}0{0,1}[7,8,9](?:\\d{8}|\\d{9})$&quot;,&quot;countryCode&quot;:&quot;JP&quot;,&quot;phoneCode&quot;:&quot;81&quot;}">+81     日本</option>
+            <option value="{&quot;areaName&quot;:&quot;美国&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(1){1}\\d{10,12}$&quot;,&quot;countryCode&quot;:&quot;US&quot;,&quot;phoneCode&quot;:&quot;1&quot;}">+1    美国</option>
+            <option value="{&quot;areaName&quot;:&quot;加拿大&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(1){1}\\d{10}$&quot;,&quot;countryCode&quot;:&quot;CA&quot;,&quot;phoneCode&quot;:&quot;1&quot;}">+1    加拿大</option>
+            <option value="{&quot;areaName&quot;:&quot;英国&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(44){1}[347-9](\\d{8,9}|\\d{11,12})$&quot;,&quot;countryCode&quot;:&quot;GB&quot;,&quot;phoneCode&quot;:&quot;44&quot;}">+44     英国</option>
+            <option value="{&quot;areaName&quot;:&quot;澳大利亚&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(61){1}4\\d{8,9}$&quot;,&quot;countryCode&quot;:&quot;AU&quot;,&quot;phoneCode&quot;:&quot;61&quot;}">+61     澳大利亚</option>
+            <option value="{&quot;areaName&quot;:&quot;新加坡&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(65){1}[13689]\\d{6,7}$&quot;,&quot;countryCode&quot;:&quot;SG&quot;,&quot;phoneCode&quot;:&quot;65&quot;}">+65     新加坡</option>
+            <option value="{&quot;areaName&quot;:&quot;马来西亚&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(60){1}1\\d{8,9}$&quot;,&quot;countryCode&quot;:&quot;MY&quot;,&quot;phoneCode&quot;:&quot;60&quot;}">+60     马来西亚</option>
+            <option value="{&quot;areaName&quot;:&quot;泰国&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(66){1}[13456789]\\d{7,8}$&quot;,&quot;countryCode&quot;:&quot;TH&quot;,&quot;phoneCode&quot;:&quot;66&quot;}">+66     泰国</option>
+            <option value="{&quot;areaName&quot;:&quot;越南&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(84){1}[1-9]\\d{6,9}$&quot;,&quot;countryCode&quot;:&quot;VN&quot;,&quot;phoneCode&quot;:&quot;84&quot;}">+84     越南</option>
+            <option value="{&quot;areaName&quot;:&quot;菲律宾&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(63){1}[24579](\\d{7,9}|\\d{12})$&quot;,&quot;countryCode&quot;:&quot;PH&quot;,&quot;phoneCode&quot;:&quot;63&quot;}">+63     菲律宾</option>
+            <option value="{&quot;areaName&quot;:&quot;印度尼西亚&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(62){1}[2-9]\\d{7,11}$&quot;,&quot;countryCode&quot;:&quot;ID&quot;,&quot;phoneCode&quot;:&quot;62&quot;}">+62     印度尼西亚</option>
+            <option value="{&quot;areaName&quot;:&quot;德国&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(49){1}1(\\d{5,6}|\\d{9,12})$&quot;,&quot;countryCode&quot;:&quot;DE&quot;,&quot;phoneCode&quot;:&quot;49&quot;}">+49    德国</option>
+            <option value="{&quot;areaName&quot;:&quot;意大利&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(39){1}[37]\\d{8,11}$&quot;,&quot;countryCode&quot;:&quot;IT&quot;,&quot;phoneCode&quot;:&quot;39&quot;}">+39    意大利</option>
+            <option value="{&quot;areaName&quot;:&quot;法国&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(33){1}(\\d{6}|\\d{8,9})$&quot;,&quot;countryCode&quot;:&quot;FR&quot;,&quot;phoneCode&quot;:&quot;33&quot;}">+33     法国</option>
+            <option value="{&quot;areaName&quot;:&quot;俄罗斯&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(7){1}[13489]\\d{9,11}$&quot;,&quot;countryCode&quot;:&quot;RU&quot;,&quot;phoneCode&quot;:&quot;7&quot;}">+7    俄罗斯</option>
+            <option value="{&quot;areaName&quot;:&quot;新西兰&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(64){1}[278]\\d{7,9}$&quot;,&quot;countryCode&quot;:&quot;NZ&quot;,&quot;phoneCode&quot;:&quot;64&quot;}">+64     新西兰</option>
+            <option value="{&quot;areaName&quot;:&quot;荷兰&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(31){1}6\\d{8}$&quot;,&quot;countryCode&quot;:&quot;NL&quot;,&quot;phoneCode&quot;:&quot;31&quot;}">+31    荷兰</option>
+            <option value="{&quot;areaName&quot;:&quot;瑞典&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(46){1}[124-7](\\d{8}|\\d{10}|\\d{12})$&quot;,&quot;countryCode&quot;:&quot;SE&quot;,&quot;phoneCode&quot;:&quot;46&quot;}">+46     瑞典</option>
+            <option value="{&quot;areaName&quot;:&quot;乌克兰&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(380){1}[3-79]\\d{8,9}$&quot;,&quot;countryCode&quot;:&quot;UA&quot;,&quot;phoneCode&quot;:&quot;380&quot;}">+380    乌克兰</option>
+            <option value="{&quot;areaName&quot;:&quot;阿联酋&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(971){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;AE&quot;,&quot;phoneCode&quot;:&quot;971&quot;}">+971     阿联酋</option>
+            <option value="{&quot;areaName&quot;:&quot;阿根廷&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(54){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;AR&quot;,&quot;phoneCode&quot;:&quot;54&quot;}">+54    阿根廷</option>
+            <option value="{&quot;areaName&quot;:&quot;奥地利&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(43){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;AT&quot;,&quot;phoneCode&quot;:&quot;43&quot;}">+43     奥地利</option>
+            <option value="{&quot;areaName&quot;:&quot;比利时&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(32){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;BE&quot;,&quot;phoneCode&quot;:&quot;32&quot;}">+32    比利时</option>
+            <option value="{&quot;areaName&quot;:&quot;保加利亚&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(359){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;BG&quot;,&quot;phoneCode&quot;:&quot;359&quot;}">+359   保加利亚</option>
+            <option value="{&quot;areaName&quot;:&quot;巴西&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(55){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;BR&quot;,&quot;phoneCode&quot;:&quot;55&quot;}">+55    巴西</option>
+            <option value="{&quot;areaName&quot;:&quot;巴哈马&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(1242){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;BS&quot;,&quot;phoneCode&quot;:&quot;1242&quot;}">+1242    巴哈马</option>
+            <option value="{&quot;areaName&quot;:&quot;白俄罗斯&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(375){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;BY&quot;,&quot;phoneCode&quot;:&quot;375&quot;}">+375    白俄罗斯</option>
+            <option value="{&quot;areaName&quot;:&quot;伯利兹&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(501){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;BZ&quot;,&quot;phoneCode&quot;:&quot;501&quot;}">+501    伯利兹</option>
+            <option value="{&quot;areaName&quot;:&quot;瑞士&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(41){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;CH&quot;,&quot;phoneCode&quot;:&quot;41&quot;}">+41     瑞士</option>
+            <option value="{&quot;areaName&quot;:&quot;智利&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(56){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;CL&quot;,&quot;phoneCode&quot;:&quot;56&quot;}">+56     智利</option>
+            <option value="{&quot;areaName&quot;:&quot;哥伦比亚&quot;,&quot;checkKey&quot;:&quot;^(00){0,1}(57){1}\\d{6,12}$&quot;,&quot;countryCode&quot;:&quot;CO&quot;,&quot;phoneCode&quot;:&quot;57&quot;}">+57    哥伦比亚</option>
+        <input type="text" placeholder="请输入手机号"></li> 
+       <li class="inputText" style="display: none"><span class="iconfont">&#xe602;</span>
+        <input type="password" placeholder="请输入验证码"><p style="font-size: 12px;width: 130px;text-align: center">获取验证码</p></li> 
+       <li><div class="sumbit">登录</div></li>
+       <li><a href="https://weibo.com"><span class="iconfont" style="color: orangered">&#xe6a2;</span>微博登录</a><a href="https://auth.alipay.com"><span style="color:darkcyan" class="iconfont">&#xe68b;</span>支付宝登录</a></li>
+       <li class="otherA"><a href="http://10.31.162.16/taobao/newUser.html">免费注册</a><a href="">忘记用户名</a><a href="">忘记密码</a></li>
+    </div>
+    <div class="maindenglu  scanTheCode" style="display: none">
+      <p class="scanTheCodeText">手机扫码，安全登录</p>
+      <div class="ereimaceshi"><img src="./img/ceshi.png" alt=""></div>
+      <div class="scanTheCodeA"><span class="iconfont">&#xe621;</span><p>打开&emsp;<a href="">手机淘宝</a>|<a href="">手机天猫</a>&emsp;扫一扫登录</p></div>
+      <div class="otherB"><a href="http://10.31.162.16/taobao/newUser.html">免费注册</a><a href="">密码登录</a></div>
+    </div>
+</div>
+</div>
+</div>
+
+<script>
+const maindenglu = document.querySelectorAll(".maindenglu");
+ const textSelect = document.querySelectorAll(".textSelect span");
+ const inputText =Array.from(document.querySelectorAll(".inputText"));
+ const otherA = document.querySelectorAll(".otherA a");
+ const Switchicon = document.querySelector(".Switchicon");
+ const warning = document.querySelector("#warning");
+ init();
+ function init(){
+     textSelect[0].onclick =textSelect[1].onclick = (e)=>{
+        e.target.style.borderBottom = " 2px solid #000";
+           if(textSelect[0]==e.target){
+            textSelect[1].style.borderBottom = " none";
+            inputText.forEach((item,index)=>{
+               item.style.display =  index<2? "flex" : "none";
+               otherA.forEach(item=>{
+                   item.style.display = "block";
+               })
+            })
+           }else{
+            textSelect[0].style.borderBottom = " none";
+            inputText.forEach((item,index)=>{
+                item.style.display = index<2?"none" : "flex";
+            })
+            otherA.forEach(item=>{
+                item!==otherA[0]    ?  item.style.display = "none" : "";
+               })
+           }
+     }
+Switchicon.bool = true;
+Switchicon.onclick = e=>{
+    if(Switchicon.bool){
+    Switchicon.innerHTML = "&#xe63b;"
+    maindenglu[0].style.display = "none";
+    maindenglu[1].style.display = "block";
+    }else{
+        Switchicon.innerHTML = "&#xe642;"
+        maindenglu[1].style.display = "none";
+    maindenglu[0].style.display = "block";
+    }
+    
+    e.preventDefault();
+Switchicon.bool = !Switchicon.bool;
+return false;
+ }
+}
+
+
+
+//   登陆 插件
+!function(window){
+//   登录验证类   
+class userApassword{
+//   传 账号 密码以及 点击 元素.
+constructor(option){
+this.settings = {
+    user: document.querySelector(".data-user"),  // 账号
+    password:document.querySelector(".data-password"), //密码
+    sumbit:document.querySelector(".sumbit"), // 登录按钮
+    type:"normal",    //验证账号类型
+    validation:false,   // 是否验证
+    href:"www.baidu.com",    //跳转的页面
+    onkeyEnter:true,        // 是否用过回车进行登录
+    url:"php/taobao.php"       // 后台接口.
+}
+this.option = option;   //接收配置
+//初始化
+this.init();
+// 按钮点击事件   验证
+this.BTN();
+}
+// 初始化
+init(){
+Object.assign(this.settings,this.option);
+// 是否  输入验证
+let _this = this.settings;
+//  验证 意味着需要判断是否要验证  除 false 和 字符串 "false" 以外 默认验证
+if(_this.validation!==false && _this.validation!=="false" ){
+//  统一的 不能为空的验证    
+  // 验证需要 通过类型来判断验证的是邮箱登录还是手机号码登录。 需要验证type 属性
+   //暂时不写   因为先使用的是 不需要验证;
+   if( _this.type=="email"){}
+}
+
+}
+
+//   点击元素添加点击事件。
+BTN(){
+    let _this = this.settings;
+    try{
+        _this.sumbit.onclick = e =>{
+      this.dataAjax(_this);
+    }
+    }catch{
+    }
+    window.addEventListener("keyup",e=>{
+        if(e.keyCode==13)
+        this.dataAjax(_this);
+    })
+
+}
+
+
+dataAjax(_this){
+//   验证账号密码不为空
+if(_this.user.value==""){
+    warning.textContent = "账号不能为空";
+}else if(_this.password.value==""){
+    warning.textContent = "密码不能为空";
+}else{
+    // 
+    $.ajax({
+    type:"post",
+    url:_this.url,
+    data:{
+      user:  _this.user.value,
+      password:  hex_sha1( _this.password.value)
+    },
+    success:function(data){
+        data  = data.split("?");
+        if(data[0]=="1"){
+          _this.success(hex_sha1( _this.password.value),_this.user.value);
+          window.location.href = data[1];
+        }else{
+          warning.textContent = data[1];
+        }
+    },
+    error:function(error){
+        console.log(error);
+    }
+})
+}
+}
+}
+window.userApassword = userApassword;
+}(window)
+
+let cookie = new Cookiefn();
+
+var obj = {
+   url:"http://10.31.162.16/taobao/php/userpassword/user_email.php",
+   success:function(password,email){
+    cookie.addCookie("password",password);
+    cookie.addCookie("email",email);
+   }
+}
+new userApassword(obj);
+</script>
+
+
+
+
+</body>
+</html>

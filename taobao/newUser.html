@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户注册页面</title>
+      <!-- 页头导航栏    -->
+    <link rel="stylesheet" type="text/css" href="../taobao/css/first.css" />
+    <link rel="stylesheet" href="../taobao/css/font_t20i9ofs3lt/iconfont.css">
+	<link rel="stylesheet" href="../taobao/css/font_nzpr7n9pvu/iconfont.css">
+    <script src="../taobao/css/font_d72pqdvv4sg/iconfont.js"></script>
+    <link rel="stylesheet" href="./css/hear.css">
+    <!-- 页头导航栏    -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../taobao/js/Cookie.js"></script>
+    <script src="../taobao/js/sha1.js"></script>
+</head>
+<body>
+    <!-- 页头导航栏    -->
+        <header>
+                <div class="head" id="head">
+                        <nav class="main1">
+                            <li class="SelectArea"><a href="function:;" target="_top">中国大陆</a><span class="iconfont">&#xe541;</span></li>
+                            <li><a href="function:;" target="_top" style="color: red;">请登陆</a></li>
+                            <li><a href="http://10.31.162.16/taobao/newUser.html" target="_top">免费注册</a></li>
+                            <li><a href="function:;" target="_top">手机逛淘宝</a></li>
+                            <li id="Webnavigation"><a href="function:;" target="_top"><span class="iconfont">&#xe50c;</span>网站导航</a><span class="iconfont">&#xe541;</span></li>
+                            <li class="CustomerService"><a href="function:;" target="_top">联系客服</a><span class="iconfont">&#xe541;</span></li>
+                            <li class="maijiaconter"><a href="function:;" target="_top">XXX买家中心</a><span class="iconfont">&#xe541;</span></li>
+                            <li><span class="spanshu">|</span></li>
+                            <li><a href="function:;" target="_top">商品分类</a></li>
+                            <li class="collection"><a id="favorites" target="_top" class="iconfont">&#xe574;&emsp;收藏夹</a><span class="iconfont">&#xe541;</span></li>
+                            <li ><a  id="shopcar"  target="_top" class="iconfont">&#xe504;&emsp;购物车<span class="num" style="display: none"></span></a><span class="iconfont">&#xe541;</span></li>
+                            <li class="our_taobao"><a id="mytaobao"  target="_top">我的淘宝</a><span class="iconfont">&#xe541;</span></li>
+                        </nav>
+                    </div>
+        </header>
+        <script src="./js/hear.js"></script>
+   <!-- 页头导航栏    -->
+<style>
+    .logindiv{margin-top: 20px;height: 100px;}
+    .logindiv img{width: 120px;float: left;}
+    .logindiv p{font-size: 25px;height: 40px;width: 100px;float: left;}
+     .registration_information{    height: 45px;  
+    border-bottom: 2px solid #e6e6e6;text-align: center;display: flex;justify-content: center;align-items: center;
+    position: relative;}
+     .registration_information li{color: #3e3e3e;display: inline;
+    float: left;width: 170px;padding-left: 70px; height: 46px; line-height: 46px;
+    font-size: 16px;font-weight: 700;border-bottom: 2px solid #ff4700;}
+    .registration_information li span{width: 20px;height: 20px;border-radius: 50%;background: orange;color: #fff;
+    font-size: 20px;text-align: center;line-height: 20px;display: inline-block}
+    .message_input{width: 900px;height: 500px;margin: 50px auto;padding: 8px;padding-left: 500px;}
+    .message_input label{font-size: 14px;font-weight:normal;position: relative;}
+    .message_input input{width:275px;height: 30px;font-size: 16px;text-indent: .5em;display: inline-block;margin:5px 15px; }
+    .message_input .subeMail{width: 350px;background: #ccc;box-shadow: none;border: none; margin:0;}
+    #Image_authen{margin: 15px 0;height: 30px;display: inline-block}
+
+
+#account_information{height: 500px;margin:50px auto;display: none}
+#account_information 
+.main2{font-size: 20px;width: 600px;text-align: center;height: 500px;
+margin: 0 auto}
+#account_information  .email{color: orangered}
+  #account_information .password_div{width: 500px;height: 50px;margin: 10px auto;
+    padding-left: 100px;
+display: flex;justify-content: center;align-items: center}
+  #account_information  .password_div label{
+height: 50px;line-height: 50px;}
+  #account_information  .password_div .password{width: 180px;
+    height:26px;
+    margin: 0 7px;
+}
+#account_information .password_div span{width: 100px;font-size: 12px;}
+</style>
+
+<div class="main1 logindiv"><img src="./img/Login.png" alt=""><p>邮箱注册</p></div>
+<div class="main1 main">
+
+<ul class="registration_information">
+    <li><span>1</span>&emsp;设置用户名</li>
+    <li><span>2</span>&emsp;填写密码账号信息</li>
+    <li><span>√</span>&emsp;注册成功</li>
+</ul>
+
+<div class="message_input">
+<label for="">电子邮箱</label><input type="text" class="eMail" placeholder="请输入邮箱"><label class="yanzhneg"></label><br>
+<span id="Image_authen"><input class="subeMail" disabled="true" value= " "  type="button"></span><br>
+</div>
+</div>
+
+<div class="main1" id="account_information">
+    <div class="main2">
+    <p>您以激活邮箱 <span class="email">13105609921@163.com</span> 请在两分钟内进行密码填写</p>
+    <div class="password_div"> <label for="">密&emsp;&emsp;码</label><input type="text"  class="password passwordOne"> <span class="passwordOneSpan"></span> </div>
+    <div class="password_div"> <label for="">重复密码</label> <input type="password" class="password passwordTwo"> <span class="passwordTwoSpan"></span></div>
+    <button class="submit">提交</button><br>
+    <div>
+</div>
+
+<!--  图片验证   -->
+<script src="./js/Image_authentication.js"></script>
+<!-- 发送信息 -->
+<script>
+
+
+   
+
+//    http://10.31.162.16/taobao/ 
+   const url = "http://10.31.162.16/taobao/";
+   const eMail = document.querySelector(".eMail");
+   const yanzhneg = document.querySelector(".yanzhneg");
+   const subeMail = document.querySelector(".subeMail");
+   const zhuce = document.querySelector(".zhuce");
+   let cookie = new Cookiefn();
+   var timer ;
+   let bool = true;
+   var sp =  null;
+    //  放入的滑动的父元素   父元素  图片路径数组
+    let imgs =   new  $.$ImageA({$fat : $("#Image_authen"),
+     imgs : ['./img/fengjiahua1.jpg','./img/fengjiahua2.jpg','./img/fengjiahua3.jpg'],
+    //  color:"green",
+    //  min_width:0.1,
+    //  min_height:0.1,
+     success:function(data){
+        message_send(data);
+     },
+     error:function(error){
+         console.log(error);
+     }
+    }).closeAndopen();
+
+    init();
+   function init(){
+       // 邮箱输入 事件
+   eMail.onblur = e=>{
+     if((/^\w{5,}\@[a-zA-Z0-9]{2,}\.(com|net|org)(\.cn)?$/).test(e.target.value)){
+        eMail.style.border = "1px solid green";
+        yanzhneg.innerHTML = "√";
+        yanzhneg.style.color = "green";
+        imgs.closeAndopen(1);
+        eMail.bool = true;
+     }else{
+        imgs.closeAndopen();
+        eMail.style.border = "1px solid red";
+        yanzhneg.style.color = "red";
+        yanzhneg.innerHTML = "X请输入正确的邮箱";
+        eMail.bool = false;
+     }
+    }
+}
+
+
+    //发送邮箱事件
+    function message_send(text){
+       if(eMail.bool){
+             $.ajax({
+                 type:"post",
+                 url:url+"php/PHPMailer/email.php",
+                 data:{
+                    text:eMail.value
+                 },success:function(data){
+                    if(data==1 || data==="数据库连接失败"){
+                    eMail.style.border = "1px solid #ccc";
+                    alert("你已经注册了");
+                    setTimeout(function(){ window.location.href = "http://10.31.162.16/taobao/denglu.html"; },500)
+                 
+                    }else{
+                        cookie.addCookie('email',eMail.value);
+                        httpemailajax();
+                    // alert("你还没注册")
+                    }
+                 }
+             })
+             text.html("验证成功");
+       }else{
+        subeMail("输入邮箱格式错误");
+       }
+       subeMail.disabled = true;
+     setTimeout(() => {
+        subeMail.disabled = false;
+     }, 120000);
+
+     }
+
+//  信息发送到后台  后台成功接收验证后 跳转页面
+function httpemailajax(){
+$.ajax({
+    type:"post",
+    url:url+"php/matramemail.php",
+    data:{
+       email:eMail.value
+    },
+    timeout:120000,
+    success:function(data){
+       $(".message_input").css("display","none");
+       $("#account_information").css("display","block");
+       sp = cookie.selectCookie("email")
+       $.passwordyanzheng();
+    },error:function(error){
+        console.log(error);
+    }
+})
+
+}
+
+
+ !function($){
+          const email = document.querySelector(".email");
+          const url = "http://10.31.162.16/taobao/";
+          const password = document.querySelectorAll(".password");
+          const submit = document.querySelector("#account_information .submit");
+          const passwordTwoSpan = document.querySelector(".passwordTwoSpan");
+          const passwordOneSpan = document.querySelector(".passwordOneSpan");
+
+          function init(){
+            email.innerHTML =sp;
+            password[0].oninput = e=>{
+              if ((/^(?=\D+\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,16}$/).test(password[0].value)){
+                passwordOneSpan.innerHTML = " √ 大写字母开头带有8-16位数字 ";
+                passwordOneSpan.style.color = "green";
+                passwordOneSpan.bool = true;
+              }else{
+                passwordOneSpan.innerHTML = "× 大写字母开头带有8-16位数字 ";
+                passwordOneSpan.style.color = "red";
+                passwordOneSpan.bool = false;
+              }
+            }
+
+             password[1].oninput = e=>{
+                 if(password[1].value==password[0].value){
+                    passwordTwoSpan.innerHTML = "√";
+                    passwordTwoSpan.bool = true;
+                    passwordTwoSpan.style.color = "green";
+                 }else{
+                    passwordTwoSpan.innerHTML = "×";
+                    passwordTwoSpan.bool = false;
+                    passwordTwoSpan.style.color = "red";
+                 }
+             }
+                    submit.onclick = e=>{
+                        if(passwordOneSpan.bool && passwordTwoSpan.bool){
+                           $.ajax({
+                               type:"post",
+                               url:url+"php/newPassword.php",
+                               data:{
+                                   email:sp,
+                                   password:hex_sha1(password[1].value)
+                               },success:function(data){
+                                   if(data=="成功")
+                                   {
+                                    window.location.href=url+"denglu.html";
+                                   }
+                                  else{
+                                      alert(data);
+                                  }
+                               }
+                           })
+                        }
+                    }
+          }
+
+
+          $.passwordyanzheng = init;
+        }(jQuery)
+
+</script>
+<!-- 密码信息存储和验证1 -->
+<script>
+
+</script>
+</body>
+</html>
