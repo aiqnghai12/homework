@@ -76,11 +76,13 @@
           // 滑动静止与 开启
           closeAndopen(data){
           if(!data || data=="false" || data==false){
+            this.$box.css({background:"red",cursor:"not-allowed"})
+            this.$box.html("X")
               this.$box.off();
-              this.$box.css("background","#f5f5f5")
           }else{
-            this.$box.css("background","#fff")
+            this.$box.css({background:"#fff",cursor:"pointer"})
             this.boxmousedown();  
+            this.$box.html(">>")
           }
           return this;
           }

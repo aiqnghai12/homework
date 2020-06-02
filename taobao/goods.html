@@ -15,10 +15,6 @@
                 margin: 0;
             }
     
-            .scale {
-                margin: 50px 0 0 30px;
-            }
-    
             .smallpic {
                 width: 450px;
                 height: 450px;
@@ -64,30 +60,38 @@
         </style>
         <link rel="stylesheet" href="./css/first.css">
         <style>
-        .message{position: absolute;top: 50px;left: 550px;z-index: -100;text-align: center}
+        .message{position: absolute;top: 150px;left: 550px;z-index: -100;text-align: center}
         .gouwuche{position: absolute;right:-200px;top: 50px;background: pink;color: #fff;border: 1px solid #000;display: block;
         width: 100px;height: 40px;cursor:pointer;line-height: 40px;text-align: center}
         .gouwuche span{position: absolute;background: red;color: #fff;border-radius: 50%;width: 12px;height: 12px;
         line-height: 12px;font-size: 12px;text-align: center;top: 0;right: 0}
         .left,.right{width: 20px;height: 22px;display: inline-block}
+        #goods_main{position: relative;}
         </style>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="./js/Cookie.js"></script>
 </head>
 <body>
-
+         <div class="hearder">
         <div id="hearhtml"></div>
-	 
+    </div>
+    <div id="searchfirst">
+    </div>
+
+    <script type="text/javascript">
+        //在js中引入
+        $(document).ready(function () {
+            $('#hearhtml').load('hear.html');
+        });
+    </script>
         <script type="text/javascript">
-       //在js中引入
-       $(document).ready(function () {
-           $('#hearhtml').load('hear.html');
-       });
-   </script>
+            //在js中引入
+            $(document).ready(function () {
+                $('#searchfirst').load('searchfirst.html');
+            });
+        </script>
 
-
-
-
+ <div id="goods_main" class=" main1">
         <div class="scale">
                 <div class="smallpic">
                     <!--小图-->
@@ -100,23 +104,14 @@
                     <!--大图-->
                     <img alt="" class="bigpic">
                 </div>
-            
             </div>
-
             <div class="message">
                 <p class="title"></p>
                 <p>￥<span class="num"></span></p>
                 <button class="left">-</button><input type="text" value="1" class="goodsnumber"><button class="right">+</button> <button class="but">加入购物车</button>
             </div>
-    
+        </div>
    <script>
-
-
-    
-
-   console.log($.shopcarInitialize)
-
-
 !function($){
        const smallpicSf = $(".smallpic img");
        const bigpic = $(".bf .bigpic");
@@ -157,7 +152,7 @@
 
 //  左右按钮点击事件
     but.addEventListener("click",(e)=>{
-        if(cookie2.selectCookie('arrsid') && cookie2.selectCookie('arrnum')){ 
+        if(cookie2.selectCookie('arrsid') && cookie2.selectCookie('arrnum')){
             let arrsid = cookie2.selectCookie('arrsid').split(",");
             let arrnum = cookie2.selectCookie('arrnum').split(",");
            
@@ -178,16 +173,23 @@
             cookie2.addCookie('arrnum',new Array(`${parseInt(goodsnumber.value)}`),100) ;
          }
 
- 
- // 小图标方法
- gouwuchejingru();
+            
+            // 小图标方法
+            gouwuchejingru();
 
-    
+                
     });
 }
 
 //  购物车小图标方法    记录id数量
 function gouwuchejingru(){
+
+    //在js中引入
+    $(document).ready(function () {
+        $('#hearhtml').load('hear.html');
+    });
+
+    // console.log($("#hearhtml").children());
     if(cookie2.selectCookie('arrsid')){
     if(cookie2.selectCookie('arrsid').split(",").length==0){
         gouwuche.css("dispaly","none");
@@ -227,18 +229,11 @@ function leftAright(){
 
 
 
-
-
-
-
-
-
-
-
-
+//  有问题 ！！！！！！！！！！！！
 //  放大镜   类
  class Scale {
             constructor() {
+                this.goods_main = document.querySelector("#goods_main");
                 this.scale = document.querySelector('.scale');
                 this.smallpic = document.querySelector('.smallpic');
                 this.sf = document.querySelector('.sf');
@@ -246,52 +241,52 @@ function leftAright(){
                 this.bf = document.querySelector('.bf');
             }
             init() {
-                //1.鼠标移入移出小图，小放和大放会对应显示和隐藏。
+
+  this.sf.style.width = this.smallpic.offsetWidth * this.bf.offsetWidth / this.bigpic.offsetWidth + 'px';
+                    //2.鼠标移入求小放的尺寸。
+  this.sf.style.height = this.smallpic.offsetHeight * this.bf.offsetHeight / this.bigpic.offsetHeight + 'px';
+                   //3.比例，注意比例一定要大于1(放大操作)，一定大的比小的。
+  this.bili = this.bigpic.offsetWidth / this.smallpic.offsetWidth; //1.鼠标移入移出小图，小放和大放会对应显示和隐藏。
+                //  移入显示 
                 this.smallpic.onmouseover = () => {
                     this.sf.style.visibility = 'visible';
                     this.bf.style.visibility = 'visible';
-                    //2.鼠标移入求小放的尺寸。
-                    this.sf.style.width = this.smallpic.offsetWidth * this.bf.offsetWidth / this.bigpic.offsetWidth + 'px';
-                    this.sf.style.height = this.smallpic.offsetHeight * this.bf.offsetHeight / this.bigpic.offsetHeight + 'px';
-                    //3.比例，注意比例一定要大于1(放大操作)，一定大的比小的。
-                    this.bili = this.bigpic.offsetWidth / this.smallpic.offsetWidth;
                     //4.鼠标移动的时候，小放跟随鼠标
-                    this.smallpic.onmousemove = (ev) => {
+                    this.scale.onmousemove = (ev) => {
                         var ev = ev || window.event;
                         this.move(ev);
                     }
                 };
 
-                this.smallpic.onmouseout = () => {
+                // 一处隐藏
+                this.scale.onmouseout = () => {
                     this.sf.style.visibility = 'hidden';
                     this.bf.style.visibility = 'hidden';
                 };
             }
             move(ev) {
-                let leftvalue = ev.clientX - this.scale.offsetLeft - this.sf.offsetWidth / 2;
-                let topvalue = ev.clientY - this.scale.offsetTop - this.sf.offsetHeight / 2;
+                let leftvalue = ev.clientX -  this.goods_main.offsetLeft- this.sf.clientWidth/2;
+                let topvalue = ev.clientY -  this.goods_main.offsetTop - this.sf.clientHeight/2;
+                console.log(this.scale.offsetTop)
                 if (leftvalue < 0) {
                     leftvalue = 0;
-                } else if (leftvalue >= this.smallpic.offsetWidth - this.sf.offsetWidth) {
-                    leftvalue = this.smallpic.offsetWidth - this.sf.offsetWidth
+                } else if (leftvalue >= this.smallpic.clientWidth - this.sf.clientWidth) {
+                    leftvalue = this.smallpic.clientWidth - this.sf.clientWidth;
                 }
                 if (topvalue < 0) {
                     topvalue = 0;
-                } else if (topvalue >= this.smallpic.offsetHeight - this.sf.offsetHeight) {
-                    topvalue = this.smallpic.offsetHeight - this.sf.offsetHeight
+                } else if (topvalue >= this.smallpic.clientHeight - this.sf.clientHeight) {
+                    topvalue = this.smallpic.clientHeight - this.sf.clientHeight;
                 }
                 this.sf.style.left = leftvalue + 'px';
                 this.sf.style.top = topvalue + 'px';
                 this.bigpic.style.left = -leftvalue * this.bili + 'px';
                 this.bigpic.style.top = -topvalue * this.bili + 'px';
             }
-
         }
         new Scale().init();
 
-
-
-
     </script>
+
 </body>
 </html>

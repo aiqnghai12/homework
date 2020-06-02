@@ -393,11 +393,11 @@
 	</div>
 
 	<style>
-			.goods_ul{width: 100%;background: #fff;margin: 0 auto;border: 1px solid #bbb;overflow: hidden;border-top: none;
+			.goods_ul{width: 100%;background: #fff;margin: 0 auto;border: 1px solid #f5f5f5;overflow: hidden;border-top: none;
 			}
-			.goods_ul li{width: 240px;height: 380px;overflow: hidden;box-sizing: border-box;
-			padding: 10px;border: 1px solid #bbb; position: relative;float: left;}
-			.goods_ul li:hover{border:2px solid orangered}
+			.goods_ul li{width: 240px;height: 380px;overflow: hidden;box-sizing: border-box;transition: all .5s;
+			padding: 10px;border: 1px solid #f5f5f5; position: relative;float: left;}
+			.goods_ul li:hover{border:1px solid orangered}
 			.goods_ul li img{width: 220px;margin: auto;height: 220px;}
 			.goods_ul li p{font-size: 14px;margin-top: 8px;}
 			.goods_ul li h4{color: #ff5000;font-size: 22px;position: absolute;left: 10px;bottom: 5px;}
@@ -407,11 +407,20 @@
 			.taobao_tuijian span{border-left: 5px solid maroon;font-size: 20px;color: #ff9000;}
 			/* .taobao_tuijian span{} */
              .goods_ul_tuijian li{height: 350px;}
-  
+			 .goods_ul_tuijian .Similarbaby{width:240px;position: absolute;height: 80px;background: orangered;left: 0;
+			 color: #fff;font-size: 14px;display: flex;justify-content: center;align-items: center;bottom: -80px;transition: all .5s;
+			}
+			.goods_ul_tuijian .Similarbaby p{text-align: center;}
+			.goods_ul_tuijian .Similarbaby a{color: #fff;font-size: 12px;border-top: 1px solid #fff;}
+			 
+
 		  .goods_host  .goods_class span{font-size: 13px;margin:0 10px;color: #555;cursor: pointer;height: 50px;line-height: 50px}
 		  .goods_host  .goods_class span:hover{color: orangered}
 		  .goods_host .goods_ul_host  h6{color:blue;font-size: 12px;height: 33px;overflow: hidden;}
 		  .goods_host .goods_ul_host  .baoyou{width: 40px;height: 20px}
+
+          
+
 		</style>
 
 
@@ -443,163 +452,19 @@
 		</ul>
 	</div>
 
- 
-   <style>
- footer{margin-top:20px;background: #fff }
- .helper {
-    padding-top: 40px;
-    height: 140px;
-    *zoom: 1;
-}
-.helper .mod {
-    float: left;
-    *display: inline;
-    margin-right: -1px;
-    width: 25%;
-}
-.tb-footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-height: 125px;
-    margin-top: 20px;
-    padding-bottom: 9px;
-    background-color: #fff;
-    font-size: 12px;
-}
-   </style>
+ <!-- 引入 脚页面 -->
+<footer id="footer">
 
-
-	<footer style="">
-			<div class="hotsale-ft main1 " style="background: #fff;text-align: center">
-					<i class="hotsale-end" style="display: inline;">END</i>
-			</div>
-				  <div class="layer main1" style="background: #fff">
-						<div class="layer-inner">
-						  <div data-spm="201876" class="tbh-helper J_Module" data-name="helper" tms-data="{&quot;moduleinfo&quot;:{&quot;helpers_count&quot;:[{&quot;count_phone&quot;:4,&quot;count&quot;:4}]},&quot;helpers&quot;:[{&quot;data_para&quot;:{&quot;tce_vid&quot;:&quot;0&quot;,&quot;tce_sid&quot;:1948817,&quot;env&quot;:&quot;online&quot;},&quot;tms_type&quot;:&quot;jsonp&quot;,&quot;data_type&quot;:&quot;tceonline&quot;}],&quot;countinfo&quot;:{&quot;helpers&quot;:{&quot;length_pc&quot;:0,&quot;length&quot;:0}}}">
-							<div class="helper J_Helper"><div class="mod" data-spm-ab="1">
-						  <div class="mod-wrap" data-spm-anchor-id="a21bo.2017.201876.i0.5af911d929xPPH">
-							<h4>
-							  <!-- <i class="tb-ifont"></i> -->
-							  <span>消费者保障</span>
-							</h4>
-							<ul>
-							  
-							  <li><a href="https://rule.taobao.com/detail-1690.htm?spm=a2177.7231193.0.0.623f17eayw1xeN&amp;tag=self">保障范围</a></li>
-							  
-							  <li><a href="http://service.taobao.com/support/knowledge-1119776.htm">退货退款流程</a></li>
-							  
-							  <li><a href="http://service.taobao.com/support/main/service_center.htm">服务中心</a></li>
-							  
-							  <li><a href="http://www.taobao.com/go/act/315/xb_20100707.php">更多特色服务</a></li>
-							  
-							</ul>
-						  </div>
-						</div>
-						
-						<div class="mod" data-spm-ab="2">
-						  <div class="mod-wrap">
-							<h4>
-							  <!-- <i class="tb-ifont"></i> -->
-							  <span>新手上路</span>
-							</h4>
-							<ul>
-							  
-							  <li><a href="http://vip.taobao.com/new.htm">新手专区</a></li>
-							  
-							  <li><a href="http://315.taobao.com/">消费警示</a></li>
-							  
-							  <li><a href="http://bbs.taobao.com/catalog/424023-49511-1.htm">交易安全</a></li>
-							  
-							  <li><a href="http://service.taobao.com/support/minerva/beta_robot_main.htm">24小时在线帮助</a></li>
-							  
-							  <li><a href="http://mai.taobao.com/seller_admin.htm">免费开店</a></li>
-							  
-							</ul>
-						  </div>
-						</div>
-						
-						<div class="mod" data-spm-ab="3">
-						  <div class="mod-wrap">
-							<h4>
-							  <!-- <i class="tb-ifont"></i> -->
-							  <span>付款方式</span>
-							</h4>
-							<ul>
-							  
-							  <li><a href="https://payservice.alipay.com/intro/index.htm?c=kjzf">快捷支付</a></li>
-							  
-							  <li><a href="https://payservice.alipay.com/intro/index.htm?c=xyk">信用卡</a></li>
-							  
-							  <li><a href="https://payservice.alipay.com/intro/index.htm?c=yeb">余额宝</a></li>
-							  
-							  <li><a href="https://payservice.alipay.com/intro/index.htm?c=hb">蚂蚁花呗</a></li>
-							  
-							  <li><a href="http://www.taobao.com/go/chn/tb-fp/2014/tbcod.php">货到付款</a></li>
-							  
-							</ul>
-						  </div>
-						</div>
-						
-						<div class="mod mod-last " data-spm-ab="4">
-						  <div class="mod-wrap">
-							<h4>
-							  <!-- <i class="tb-ifont"></i> -->
-							  <span>淘宝特色</span>
-							</h4>
-							<ul>
-							  
-							  <li><a href="https://market.m.taobao.com/app/fdilab/download-page/main/index.html">手机淘宝</a></li>
-							  
-							  <li><a href="https://alimarket.taobao.com/markets/qnww/portal-group/ww/index">旺旺/旺信</a></li>
-							  
-							  <li><a href="http://pan.taobao.com/">大众评审</a></li>
-							  
-							</ul>
-						  </div>
-						</div></div>
-						  </div>
-						</div>
-					  </div>
-					  <div id="J_SiteFooter" class="main1" style="min-height: 150px"><div class="tb-footer  tb-footer-with-logo" data-spm="1997523009"><div class="tb-footer-hd"><p><span><a href="http://www.alibabagroup.com/cn/global/home" rel="noopener noreferrer">阿里巴巴集团</a></span><b>|</b><span><a href="http://www.taobao.com" rel="noopener noreferrer">淘宝网</a></span><b>|</b><span><a href="http://www.tmall.com" rel="noopener noreferrer">天猫</a></span><b>|</b><span><a href="http://ju.taobao.com" rel="noopener noreferrer">聚划算</a></span><b>|</b><span><a href="http://www.aliexpress.com" rel="noopener noreferrer">全球速卖通</a></span><b>|</b><span><a href="http://www.alibaba.com/" rel="noopener noreferrer">阿里巴巴国际交易市场</a></span><b>|</b><span><a href="http://www.1688.com" rel="noopener noreferrer">1688</a></span><b>|</b><span><a href="http://www.alimama.com" rel="noopener noreferrer">阿里妈妈</a></span><b>|</b><span><a href="http://www.fliggy.com/" rel="noopener noreferrer">飞猪</a></span><b>|</b><span><a href="https://taoxiaopu.taobao.com/" rel="noopener noreferrer">淘小铺</a></span><b>|</b><span><a href="http://www.aliyun.com" rel="noopener noreferrer">阿里云计算</a></span><b>|</b><span><a href="http://www.alios.cn/" rel="noopener noreferrer">AliOS</a></span><b>|</b><span><a href="http://www.aliqin.cn/" rel="noopener noreferrer">阿里通信</a></span><b>|</b><span><a href="http://www.etao.com/" rel="noopener noreferrer">一淘</a></span><b>|</b><span><a href="http://www.net.cn" rel="noopener noreferrer">万网</a></span><b>|</b><span><a href="http://www.autonavi.com/" rel="noopener noreferrer">高德</a></span><b>|</b><span><a href="http://www.uc.cn/" rel="noopener noreferrer">UC</a></span><b>|</b><span><a href="http://www.umeng.com/" rel="noopener noreferrer">友盟</a></span><b>|</b><span><a href="https://s.alibaba.com/?scene=clinks" rel="noopener noreferrer">阿里安全</a></span><br><span><a href="http://www.xiami.com" rel="noopener noreferrer">虾米</a></span><b>|</b><span><a href="https://www.damai.cn/" rel="noopener noreferrer">大麦网</a></span><b>|</b><span><a href="http://www.dingtalk.com/?lwfrom=20150130160830727" rel="noopener noreferrer">钉钉</a></span><b>|</b><span><a href="https://www.alipay.com" rel="noopener noreferrer">支付宝</a></span><b>|</b><span><a href="http://www.youku.com/" rel="noopener noreferrer">优酷</a></span><b>|</b><span><a href="http://www.tudou.com/" rel="noopener noreferrer">土豆</a></span><b>|</b><span><a href="http://www.alihealth.cn/" rel="noopener noreferrer">阿里健康</a></span><b>|</b><span><a href="http://www.alibabapictures.com/simp/0-home.html" rel="noopener noreferrer">阿里影业</a></span><b>|</b><span><a href="http://www.alisports.com/cn/" rel="noopener noreferrer">阿里体育</a></span><b>|</b><span><a href="https://www.mybank.cn/" rel="noopener noreferrer">网商银行</a></span></p></div>
-      <div class="tb-footer-bd">
-        <p>
-          <span><a href="https://www.taobao.com/tbhome/page/about/home" rel="noopener noreferrer">关于淘宝</a></span><span><a href="https://www.taobao.com/tbhome/page/about/partner?spm=a21bo.9614792.102.5.ed410c5siU20Y" rel="noopener noreferrer">合作伙伴</a></span><span><a href="http://pro.taobao.com" rel="noopener noreferrer">营销中心</a></span><span><a href="http://jubao.alibaba.com/internet/readme.htm?site=taobao" rel="noopener noreferrer">廉正举报</a></span><span><a href="https://consumerservice.taobao.com/" rel="noopener noreferrer">联系客服</a></span><span><a href="http://open.taobao.com" rel="noopener noreferrer">开放平台</a></span><span><a href="http://www.taobao.com/about/join.php" rel="noopener noreferrer">诚征英才</a></span><span><a href="http://consumerservice.taobao.com/contact-us" rel="noopener noreferrer">联系我们</a></span><span><a href="https://www.taobao.com/tbhome/page/sitemap" rel="noopener noreferrer">网站地图</a></span><span><a href="https://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201703241622_61002.html" rel="noopener noreferrer">隐私权政策</a></span><span><a href="https://terms.alicdn.com/legal-agreement/terms/suit_bu1_taobao/suit_bu1_taobao201811121436_80276.html" rel="noopener noreferrer">法律声明</a></span><span><a href="http://ipp.alibabagroup.com/" rel="noopener noreferrer">知识产权</a></span>
-          <b>|</b> <em>© 2003-现在 Taobao.com 版权所有</em>
-        </p>
-        <p><span><a href="http://www.beian.miit.gov.cn" rel="noopener noreferrer">增值电信业务经营许可证：浙B2-20080224</a></span><b>|</b><span><a href="http://www.beian.miit.gov.cn" rel="noopener noreferrer">增值电信业务经营许可证（跨地区）： B2-20150210</a></span><b>|</b><span><a href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/2E7819FC84674D5980464916C24B7E3E" rel="noopener noreferrer">浙网文（2019）1033-086号</a></span><b>|</b><span>浙江省网络食品销售第三方平台提供者备案：浙网食A33010001</span></p><p><span>互联网药品信息服务资格证书（浙）-经营性-2018-0010</span><b>|</b><span>短消息类服务接入代码使用证书：号【2016】00154-A01</span><b>|</b><span>信息网络传播视听许可证：1109364号</span><b>|</b><span>出版物网络交易平台服务经营备案号：新出发浙备字第002号</span></p><p><span>
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010002000078" rel="noopener noreferrer">
-              <span class="tb-footer-mod" style="background-position:-861px 0px; width:20px; height: 20px; "></span>
-              浙公网安备 33010002000078号
-            </a></span><b>|</b><span>广播电视节目制作经营许可证（浙）字第01012号</span><b>|</b><span>市场名称登记证：工商网市字3301004120号</span><b>|</b><span>医疗器械网络交易服务第三方平台备案：（浙）网械平台备字[2018]第00004号</span></p>
-      </div>
-        <div class="tb-footer-ft"><span>
-            <a target="_blank" href="http://www.pingpinganan.gov.cn/" class="tb-footer-mod" rel="noopener noreferrer" style="background-position:0px 0px; width:36px;  background-image: url(http://img.alicdn.com/tps/i1/T1FeW3XXNfXXXXXXXX-36-36.gif);">
-            </a></span><span>
-            <a target="_blank" href="http://idinfo.zjamr.zj.gov.cn//bscx.do?method=lzxx&amp;id=3301843301002003002431" class="tb-footer-mod" rel="noopener noreferrer" style="background-position:0px 0px; width:30px;  ">
-            </a></span><span>
-            <a target="_blank" href="http://idinfo.zjaic.gov.cn/bscx.do?spm=1.7274553.1997523009.29.alN7ce&amp;method=hddoc&amp;id=33018400000067" class="tb-footer-mod" rel="noopener noreferrer" style="background-position:-40px 0px; width:33px;  ">
-            </a></span><span>
-            <a target="_blank" href="#" class="tb-footer-mod" rel="noopener noreferrer" style="background-position:-80px 0px; width:50px;  ">
-            </a></span><span>
-            <a target="_blank" href="https://ss.knet.cn/verifyseal.dll?spm=1.7274553.1997523009.31.alN7ce&amp;&amp;sn=2010062300100001357&amp;pa=20100701" class="tb-footer-mod" rel="noopener noreferrer" style="background-position:-140px 0px; width:83px;  ">
-            </a></span><span>
-            <a target="_blank" href="https://www.12377.cn/" class="tb-footer-mod" rel="noopener noreferrer" style="background-position:0px -18px; width:250px;  background-image: url(//img.alicdn.com/tfs/TB1N7kwRVXXXXbAapXXXXXXXXXX-500-127.png_250x250);">
-            </a></span><span>
-            <a target="_blank" href="http://www.12377.cn/node_548446.htm" class="tb-footer-mod" rel="noopener noreferrer" style="background-position:-650px 0px; width:105px;  ">
-            </a></span><span>
-            <a target="_blank" href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/2E7819FC84674D5980464916C24B7E3E" class="tb-footer-mod" rel="noopener noreferrer" style="background-position:-345px 0px; width:82px;  ">
-            </a></span><span>
-            <a target="_blank" href="https://credit.szfw.org/CX20160715023573390688.html" class="tb-footer-mod" rel="noopener noreferrer" style="background-position:-761px 0px; width:97px;  ">
-            </a></span><span>
-            <a target="_blank" href="http://jb.ccm.gov.cn/" class="tb-footer-mod" rel="noopener noreferrer" style="background-position:-884px 0px; width:249px;  ">
-			</a></span></div></div></div>
-			
-
-			
-        <div class="main1">
-			   <img src="../taobao/img/foor.JPG" style="width: 100%" alt="">
-		   </div>
 	</footer>
+	<script type="text/javascript">
+		//在js中引入
+		$(document).ready(function () {
+			$('#footer').load('foot.html');
+		});
+	</script>
+
+
+
 	<script>
 	 	$("html,body").stop(true).animate({
               scrollTop:0
@@ -614,17 +479,18 @@
 	//   右边的导航 
 
 !function($){
-
+    // 商品类表加载类
 	class creatgoodslist {
+		// 传入 php地址 传入父元素 传入需要分类的参数
 		constructor(url, parent,Spanadd) {
 			this.spanadd = Spanadd;
-			this.$fat = parent;
+			this.$fat = parent;  // 父元素
 			this.liList = null;
-			this.first = 0;
-			this.url = url;
-			this.bool = true;
-			this.init();
-			if(!this.spanadd)
+			this.first = 0;      // 商品开始的位置
+			this.url = url;      
+			this.bool = true;    // 延迟加载的标识
+			this.init();         // 初始化 + 创建 + 添加
+			if(!this.spanadd)    //  如果没有有分类的参数  则需要懒加载
 			this.winScroll();
 		}
 
@@ -668,15 +534,25 @@
 			   <p>${item.goods_name}</p>
 			  <h4><span>￥</span>${item.goods_price}</h4>
 			  <h3><span>销量:</span>${item.goods_number}</h3>
+			  <div class="Similarbaby"><p><span class="iconfont">&#xe973;</span><span>找相似</span><br>
+				<a>发现更多相似的宝贝</a>
+				</div>
 		     </li>`;
 			})
 			this.$fat.html(this.$fat.html()+str);
-
-
+           
+                    
 					$(".goods_li").children().css("cursor","pointer").on("click",function(){
 		let goods_id = $(this).parents(".goods_li").val();
 		window.location.href =  url+"goods.html?"+goods_id;
 		})
+
+        $(".goods_li").hover(function(){
+			$(this).children(".Similarbaby").css("bottom","0");
+		},function(){
+			$(this).children(".Similarbaby").css("bottom","-80px");
+		})
+
 
 			if(this.first>=35){
 			$(window).off("scroll",this.windowlayout);
@@ -774,7 +650,6 @@
 	function creatgoods_li_on(){
 		new $.creatgoodslist_$(url + "php/data/goods_all.php",$(".goods_ul_host"),$(".goods_class"));
 		new $.creatgoodslist_$(url + "php/data/goods_all.php",$(".goods_ul_tuijian"));
-
 }
 
 

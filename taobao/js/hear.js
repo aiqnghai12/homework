@@ -11,8 +11,7 @@
     })
     }
     
-     
-
+    
     !function($){
     class  oneMenu{
     // 下拉框需要父元素 添加的title数组  数组对应的跳转数组  ul 的宽度  ul 相对于父元素的位置 左上角 或 右上角
@@ -164,7 +163,7 @@ function gouwuchejingru(){
                     item.attr("href",this.arrhref[index]);
                 })
 
-              console.log(this.arrclick[this.shopcar])  
+            //   console.log(this.arrclick[this.shopcar])  
             }else{
                 this.arrclick.forEach((item,index)=>{
                     index == this.mytaobao ? item.html("我的淘宝") : "";
@@ -179,10 +178,6 @@ function gouwuchejingru(){
 
          // 购物车 商品添加  并获取后台数据，添加到 页面中。
          creat(){
-
-          
-
-         
 
          }
 
