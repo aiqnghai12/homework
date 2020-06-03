@@ -13,23 +13,17 @@ if(isset($_POST['user'])){
     $user = $_POST['user'];
     $password = $_POST["password"];
     $shopcar = $_POST["shopcar"];
+    $shopcarnumber = $_POST['shopcarnumber'];
 }else{
   exit("非法操作");
 }
-
-$sql ="select * from user_email where email = '{$user}' and password = '{$password}' ";
+$sql ="update user_email set shopcar = '{$shopcar}',shopcar_number = '{$shopcarnumber}'   where email = '{$user}' and password = '{$password}' ";
 $query = $conn->query($sql);
-$row = $query->fetch_assoc();
 
-
-if($shopcar){
-       echo json_encode($row);
+if($query){
+    echo "修改成功";
 }else{
-    if($row){
-        echo "1?http://10.31.162.16/taobao/index.html" ;
-        }
-        else
-        echo "0?账号密码错误";
+    echo "修改失败";
 }
 
 

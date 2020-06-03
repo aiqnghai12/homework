@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./css/font_t20i9ofs3lt/iconfont.css">
     <link rel="stylesheet" href="./css/font_d72pqdvv4sg/iconfont.css">
     <link rel="stylesheet" href="./css/font_nzpr7n9pvu/iconfont.css">
-    <link rel="stylesheet" href="../taobao/css/hear.css">
     <style>
             * {
                 padding: 0;
@@ -78,12 +77,7 @@
     <div id="searchfirst">
     </div>
 
-    <script type="text/javascript">
-        //在js中引入
-        $(document).ready(function () {
-            $('#hearhtml').load('hear.html');
-        });
-    </script>
+
         <script type="text/javascript">
             //在js中引入
             $(document).ready(function () {
@@ -111,6 +105,7 @@
                 <button class="left">-</button><input type="text" value="1" class="goodsnumber"><button class="right">+</button> <button class="but">加入购物车</button>
             </div>
         </div>
+
    <script>
 !function($){
        const smallpicSf = $(".smallpic img");
@@ -267,7 +262,7 @@ function leftAright(){
             move(ev) {
                 let leftvalue = ev.clientX -  this.goods_main.offsetLeft- this.sf.clientWidth/2;
                 let topvalue = ev.clientY -  this.goods_main.offsetTop - this.sf.clientHeight/2;
-                console.log(this.scale.offsetTop)
+              
                 if (leftvalue < 0) {
                     leftvalue = 0;
                 } else if (leftvalue >= this.smallpic.clientWidth - this.sf.clientWidth) {

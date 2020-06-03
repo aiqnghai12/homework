@@ -19,6 +19,21 @@ if(isset($_POST['email'])){
     exit("非法操作");
 }
 
+// $query = $conn->query(" select * from emaildata where email = '{$email}' and ip = '{$ip}'");
+// while($row = $query->fetch_assoc()){
+//     $bool = $row['stop'];
+// }
+//  测试阶段
+$query = $conn->query(" select * from emaildata where email = '{$email}' and ip = '{$ip}'");
+$row = $query->fetch_assoc()
+
+$sql ="update emaildata set stop ='1' where email='{$email}' and ip = '{$ip}'";
+$query = $conn->query($sql);
+
+if($row){
+    exit "不能重复发送";
+}
+
 //    通过死循环，不断的寻找邮箱有没有验证好。      如果在两分钟之内还没有验证好 ajax则断开，返回错误。
 //    通过$bool 的 false和true进行 循环的标记。  当值被验证 则跳出循环。返回数据。
 $bool = true;

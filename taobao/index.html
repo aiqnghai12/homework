@@ -13,7 +13,13 @@
 	<script src="../taobao/css/font_d72pqdvv4sg/iconfont.js"></script>
 	<style>
 	/* main css */
-	#classification{overflow: hidden;}
+	#classification:after{/*伪元素是行内元素 正常浏览器清除浮动方法*/
+        content: "";
+        display: block;
+        height: 0;
+        clear:both;
+        visibility: hidden;}
+
 	  .classheader{height: 30px;font-weight: 600;color: #fff;text-align: center;line-height: 30px;position: relative;}
 	  .classheader .title{width:190px;box-sizing:border-box;height: 30px;position: absolute;left: 0;top: 0;
 	 background: orangered;}
@@ -27,10 +33,11 @@
 	  .classbody .classul li{height: 32px;font-size: 14px;line-height: 32px;text-indent: 1em;transition: all .5s;}
 	 .classul li a{color:#666;margin: 0 4px;transition: all .5s;}
 	  .classbody .classul li .inc_{float: right;margin-right:2px;}
-     .classbody .df_message{width:714px;height: 522px;display: none;
+     .classbody .df_message{width:714px;height: 522px;display: none;transition: all.5s;
 	 position: absolute;left: 188px;top:-4px;  border: 2px solid red;padding-left: 18px;z-index: 220;background: #fff;}
 	 .df_message_left{width: 437px;height: 500px;float: left;}
-	 .df_message_left a{cursor: pointer;font-size: 13px;float: left;}
+	 .df_message_left div a{cursor: pointer;font-size: 13px;float: left;}
+	 .df_message_left div a:hover{color: orangered}
 	 .df_message_left div{width:100%;height: 160px;padding: 5px;overflow: hidden; }
 	 .df_message_right{width: 254px;height: 518px;float: right;background: gray;}
 
@@ -120,6 +127,8 @@
 	#suspension .main1{height: 50px;display: flex;justify-content: center;align-items: center}
 	#suspension .main1 img{width: 60px;}
 	/* #suspension .searchinput  */
+
+
 	</style>
 </head>
 
@@ -154,16 +163,11 @@
     });
 </script>
 
-
-		
 		<link rel="stylesheet" href="../taobao/css/font_d72pqdvv4sg/iconfont.css">
-
 		
 		<div style="background-color: #f40d4d;height:71px;">
 				<!-- 头广告 图片-->
 		<img src="../taobao/img/header.jpg" class="headerImag main1"></div>
-
-
 
 			
 		<div style="background-color: #fff;">
@@ -451,6 +455,94 @@
 		</li> -->
 		</ul>
 	</div>
+
+
+	<style>
+	
+	
+.hotsale-ft .hotsale-end{height: 60px;display: flex;font-size: 18px;
+       justify-content: center;align-items: center;color:#ccc}
+       .hotsale-ft .hotsale-end span{background:#ccc;width: 70px;height: 2px;display: inline-block;
+       margin: 0 10px;}
+       .layer{display: flex;padding: 40px 0;}
+       .layer .mod{width: 25%;box-sizing: border-box;padding: 0 1em;
+    }
+       .layer .mod li{float: left;}
+       .mod h4{color: #000;height: 50px;}
+       .mod h4  > span{display: flex;justify-content: center;align-items: center;width: 130px;}
+       .mod h4  > span .iconfont{color: #bbb;font-size: 40px;margin-right: 10px;}
+       .mod li a{color:#bbb;font-size: 13px;margin: 5px;}
+
+</style>
+
+<link rel="stylesheet" href="./css/font_b724iz6cwcc/iconfont.css">
+
+	<div class="hotsale-ft main1 " style="background: #f5f5f5;text-align: center">
+		<p class="hotsale-end" ><span></span>END<span></span></p>
+</div>
+
+<div class="layer main1" style="background: #f5f5f5">
+	<div class="mod">
+	 <div class="mod-wrap">
+	   <h4>
+		 <span><span class="iconfont">&#xe645;</span>消费者保障</span>
+	   </h4>
+	   <ul>
+		 <li><a href="https://rule.taobao.com/detail-1690.htm?spm=a2177.7231193.0.0.623f17eayw1xeN&amp;tag=self">保障范围</a></li> 
+		 <li><a href="http://service.taobao.com/support/knowledge-1119776.htm">退货退款流程</a></li>
+		 <li><a href="http://service.taobao.com/support/main/service_center.htm">服务中心</a></li>
+		 <li><a href="http://www.taobao.com/go/act/315/xb_20100707.php">更多特色服务</a></li>
+	   </ul>
+	 </div>
+   </div>
+   
+   <div class="mod">
+	 <div class="mod-wrap">
+	   <h4>
+		 <!-- <i class="tb-ifont"></i> -->
+		 <span><span class="iconfont">&#xe501;</span>新手上路</span>
+	   </h4>
+	   <ul>
+		 <li><a href="http://vip.taobao.com/new.htm">新手专区</a></li>
+		 <li><a href="http://315.taobao.com/">消费警示</a></li>
+		 <li><a href="http://bbs.taobao.com/catalog/424023-49511-1.htm">交易安全</a></li>
+		 <li><a href="http://service.taobao.com/support/minerva/beta_robot_main.htm">24小时在线帮助</a></li>
+		 <li><a href="http://mai.taobao.com/seller_admin.htm">免费开店</a></li>
+	   </ul>
+	 </div>
+   </div>
+   
+   <div class="mod">
+	 <div class="mod-wrap">
+	   <h4>
+		 <!-- <i class="tb-ifont"></i> -->
+		 <span><span class="iconfont">&#xe644;</span>付款方式</span>
+	   </h4>
+	   <ul>
+		 <li><a href="https://payservice.alipay.com/intro/index.htm?c=kjzf">快捷支付</a></li>
+		 <li><a href="https://payservice.alipay.com/intro/index.htm?c=xyk">信用卡</a></li>
+		 <li><a href="https://payservice.alipay.com/intro/index.htm?c=yeb">余额宝</a></li>
+		 <li><a href="https://payservice.alipay.com/intro/index.htm?c=hb">蚂蚁花呗</a></li>
+		 <li><a href="http://www.taobao.com/go/chn/tb-fp/2014/tbcod.php">货到付款</a></li>
+	   </ul>
+	 </div>
+   </div>
+   
+   <div class="mod">
+	 <div class="mod-wrap">
+	   <h4>
+		 <!-- <i class="tb-ifont"></i> -->
+		 <span><span class="iconfont">&#xf0033;</span>淘宝特色</span>
+	   </h4>
+	   <ul>
+		 <li><a href="https://market.m.taobao.com/app/fdilab/download-page/main/index.html">手机淘宝</a></li>
+		 <li><a href="https://alimarket.taobao.com/markets/qnww/portal-group/ww/index">旺旺/旺信</a></li>
+		 <li><a href="http://pan.taobao.com/">大众评审</a></li>
+	   </ul>
+	 </div>
+   </div>
+ </div>
+
 
  <!-- 引入 脚页面 -->
 <footer id="footer">

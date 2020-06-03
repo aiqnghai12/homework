@@ -37,13 +37,17 @@
 		let  str_3 = "<a>"+ item.title[2].data_message.split(" ").join("</a><a>") + "</a>";
     
 	classul.innerHTML += `<li><a href="">${item.title[0].name}</a><span>/</span><a href="">${item.title[1].name}</a><span>/</span><a href="">${item.title[2].name}</a><span class="inc_">></span><div class="df_message">
-	<div class="df_message_left"><div><h3>${item.title[0].name}</h3>
+	<div class="df_message_left">
+	<div><h3>${item.title[0].name}</h3>
 	${str_1}
-	</div><div><h3>${item.title[1].name}</h3>
+	</div>
+	<div><h3>${item.title[1].name}</h3>
 	${str_2}
-	</div><div><h3>${item.title[2].name}</h3>
+	</div>
+	<div><h3>${item.title[2].name}</h3>
 	${str_3}
-	</div></div>
+	</div>
+	</div>
 	<div class="df_message_right"></div>
 	</div></li>`
 	});
@@ -95,7 +99,7 @@ function dfMessageScroll(){
 		let top = $(window).scrollTop();
 		if(top>=dfmestop && top<=dfmestop+wid){
 			$(".df_message").css({
-			top:top-dfmestop+"px"
+			top:top-dfmestop+50+"px"
 			})
 		}else{
 			$(".df_message").css({
